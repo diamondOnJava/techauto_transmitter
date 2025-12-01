@@ -1,0 +1,131 @@
+/**
+ * Debug Codes Reference
+ * 
+ * Краткие коды отладки для оптимизации памяти FLASH
+ * Каждый код занимает ровно 3 байта (2 символа + \r\n)
+ */
+
+// ========== Node Operations ==========
+// IN\r\n = Node initialization error
+//         "Error with Node initialization!"
+//         Ошибка при создании структуры Node
+
+// IB\r\n = Node buffer initialization error
+//         "Error with Node's buffer initialization!"
+//         Ошибка при инициализации буфера Node
+
+// AE\r\n = Allocation error
+//         "Error allocating buffer row!"
+//         Ошибка при выделении памяти для строки буфера
+
+// NN\r\n = Node NULL error
+//         "Error: node not initialized!"
+//         Попытка работы с NULL указателем на Node
+
+// PE\r\n = Push to packet error
+//         "Error: Failed to push packet to node"
+//         Ошибка при добавлении пакета в буфер Node
+
+// ========== Serialization ==========
+// AS\r\n = Allocation serialization error
+//         "Error: Failed to allocate serialization buffer"
+//         Ошибка при выделении памяти для сериализации
+
+// SB\r\n = Serialized packet bytes
+//         "Serialized packet bytes:"
+//         Вывод сериализованного пакета (вспомогательный код)
+
+// ER\r\n = Serialize error - invalid parameters
+//         "ERROR: Invalid parameters"
+//         Ошибка сериализации: NULL буфер или Node
+
+// E1\r\n = Serialize error - network_id overflow
+//         "ERROR: Buffer overflow at network_id"
+//         Переполнение буфера при сохранении network_id
+
+// E2\r\n = Serialize error - rank overflow
+//         "ERROR: Buffer overflow at rank"
+//         Переполнение буфера при сохранении rank
+
+// IG\r\n = Ignore packet
+//         "Received message from device: Network ID=%d, Rank=%d - packet ignored"
+//         Пакет проигнорирован (неверная сеть или ранг)
+
+// ========== Transmission ==========
+// SF\r\n = Send fail
+//         "LoRa can't send data!"
+//         Ошибка при передаче LoRa пакета
+
+// SO\r\n = Send OK
+//         "Packet was sent!"
+//         Пакет успешно отправлен
+
+// ========== ADS1115 (ADC) ==========
+// AR\r\n = ADS ready error
+//         "ADS not ready!"
+//         ADS1115 не готов к работе (I2C ошибка)
+
+// AS\r\n = ADS send error
+//         "Error during sending conv reg to ADS!"
+//         Ошибка отправки команды преобразования на ADS
+
+// AC\r\n = ADS receive error
+//         "Error during receiving data from ADS!"
+//         Ошибка получения данных от ADS
+
+// AI\r\n = ADS init error
+//         "Error during ADS initialization!"
+//         Ошибка инициализации ADS1115
+
+// AF\r\n = ADS config error
+//         "Error during ADS configuration!"
+//         Ошибка конфигурации ADS1115
+
+// ========== RTC (Real Time Clock) ==========
+// RT\r\n = RTC timer error
+//         "RTC can't set wakeup timer!"
+//         Ошибка установки WakeUp Timer в RTC
+
+// RD\r\n = RTC disable error
+//         "RTC can't deactivate wakeup timer!"
+//         Ошибка деактивации WakeUp Timer
+
+// ========== Power Management ==========
+// SL\r\n = Sleep
+//         "Sleep"
+//         Переход в режим сна (SLEEP mode)
+
+// ========== LoRa Module ==========
+// LF\r\n = LoRa init failed
+//         "LoRa init failed"
+//         Ошибка инициализации LoRa модуля
+
+// ========== Configuration & Synchronization ==========
+// WC\r\n = Wait config
+//         "Wait config"
+//         Режим ожидания конфигурации (STATE_WAIT_CONFIGURATION)
+
+// SR\r\n = Sync received
+//         "Received synchro time"
+//         Получено сообщение синхронизации времени от приемника
+
+// SN\r\n = Sync not received
+//         "Timeout waiting for synchro time!"
+//         Таймаут при ожидании синхронизации времени
+
+// ========== Alarms & Events ==========
+// AO\r\n = Alarm OK
+//         "Wake up from Alarm: start retranslation"
+//         Пробуждение по будильнику RTC
+
+// RT\r\n = Retranslation
+//         "Retranslation"
+//         Ретрансляция данных (STATE_WAIT_DATA)
+
+// TO\r\n = Timeout
+//         "Timeout for receiving previous packets occurred!"
+//         Таймаут при ожидании пакетов от предыдущего узла
+
+// ND\r\n = Node Debug
+//         "=== Node Debug: ID=%d, Rank=%d ==="
+//         Вывод отладочной информации о Node
